@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class  CalculatorController implements CalculatorInterface{
@@ -14,12 +15,12 @@ public class  CalculatorController implements CalculatorInterface{
             number = sc.nextInt();
             sum = sum + number;
         }
-         return "sum of all these numbers :" + sum;
+         return "sum of all these numbers :" ;
     }
 
     @Override
     public String Subtraction(CalculatorModel calculatorModel) {
-        public static void main(String[] args) {
+//        public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("Enter the number of values you want to subtract: ");
@@ -41,28 +42,30 @@ public class  CalculatorController implements CalculatorInterface{
             System.out.println("Result: " + result);
 
             scanner.close();
-        }
+//        }
+        return null;
     }
 
     @Override
     public String Multiplication(CalculatorModel calculatorModel) {
-        System.out.print("Enter the number of values you want to multiply: ");
-        int count = scanner.nextInt();
-
-        int product = 1;
-        for (int i = 0; i < count; i++) {
-            System.out.print("Enter value " + (i + 1) + ": ");
-            int number = scanner.nextInt();
-            product *= number;
-        }
-
-        System.out.println("The product is: " + product);
-    }
+//        System.out.print("Enter the number of values you want to multiply: ");
+//        int count = scanner.nextInt();
+//
+//        int product = 1;
+//        for (int i = 0; i < count; i++) {
+//            System.out.print("Enter value " + (i + 1) + ": ");
+//            int number = scanner.nextInt();
+//            product *= number;
+//        }
+//
+//        System.out.println("The product is: " + product);
+//    }
+        return null;
     }
 
     @Override
     public String Division(CalculatorModel calculatorModel) {
-        public static void main(String[] args) {
+//        public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("Enter the number of values to divide: ");
@@ -86,47 +89,64 @@ public class  CalculatorController implements CalculatorInterface{
             System.out.println("Result: " + result);
 
             scanner.close();
-        }
+//        }
+        return null;
     }
 
     @Override
     public String Power(CalculatorModel calculatorModel) {
-        return null;
+        double answer = 1;
+        int loopStartPoint = 1;
+        while(loopStartPoint <= calculatorModel.getIntegers()){
+            answer *= calculatorModel.getOperand1();
+
+            loopStartPoint++;
+        }
+        return "\n>> " + calculatorModel.getOperand1() + " raise to power " + calculatorModel.getIntegers() + " = " + answer;
     }
 
     @Override
     public String Square(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = value * value;
+
+        return "\n>> The square of " + calculatorModel.getOperand1() + " = " + answer;
     }
 
     @Override
     public String Cube(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = value * value * value;
+
+        return "\n>> The cube of " + calculatorModel.getOperand1() + " = " + answer;
     }
 
     @Override
     public String SquareRoot(CalculatorModel calculatorModel) {
-        return null;
+        return "\n>> The square root of " + calculatorModel.getOperand1() + " = " + Math.sqrt(calculatorModel.getOperand1());
     }
 
     @Override
     public String Round(CalculatorModel calculatorModel) {
-        return null;
+        return "\n>> " + calculatorModel.getOperand1() + " round to the nearest integer is " + Math.round(calculatorModel.getOperand1());
 
     }
 
     @Override
     public String Ceiling(CalculatorModel calculatorModel) {
-        return null;
+        return "\n>> The ceiling value of " + calculatorModel.getOperand1() + " = " + Math.ceil(calculatorModel.getOperand1());
     }
 
     @Override
     public String Floor(CalculatorModel calculatorModel) {
-        return null;
+        int answer = (int) Math.floor(calculatorModel.getOperand1());
+        return "\n>> The floor value of " + calculatorModel.getOperand1() + " = " + answer;
     }
 
     @Override
     public String MinValue(CalculatorModel calculatorModel) {
+        String values = calculatorModel.getExpression();
+        String[] splittedValues = values.split(",");
         return null;
     }
 
