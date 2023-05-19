@@ -2,15 +2,17 @@ package org.example;
 
 public class CalculatorModel {
     private String expression;
-    private int powerValue;
-    private int operand1;
-    private int operand2;
+    private int integers;
+    private double operand1;
+    private double operand2;
 
-    public CalculatorModel(String expression, int powerValue, int operand1, int operand2) {
+
+    public CalculatorModel(String expression, int integers, double operand1, double operand2) {
         this.expression = expression;
-        this.powerValue = powerValue;
+        this.integers = integers;
         this.operand1 = operand1;
         this.operand2 = operand2;
+
     }
 
     public CalculatorModel() {}
@@ -23,27 +25,27 @@ public class CalculatorModel {
         this.expression = expression;
     }
 
-    public int getPowerValue() {
-        return powerValue;
+    public int getIntegers() {
+        return integers;
     }
 
-    public void setPowerValue(int powerValue) {
-        this.powerValue = powerValue;
+    public void setIntegers(int integers) {
+        this.integers = integers;
     }
 
-    public int getOperand1() {
+    public double getOperand1() {
         return operand1;
     }
 
-    public void setOperand1(int operand1) {
+    public void setOperand1(double operand1) {
         this.operand1 = operand1;
     }
 
-    public int getOperand2() {
+    public double getOperand2() {
         return operand2;
     }
 
-    public void setOperand2(int operand2) {
+    public void setOperand2(double operand2) {
         this.operand2 = operand2;
     }
 }
