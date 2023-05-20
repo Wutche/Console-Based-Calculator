@@ -145,73 +145,156 @@ public class  CalculatorController implements CalculatorInterface{
 
     @Override
     public String MinValue(CalculatorModel calculatorModel) {
-        String values = calculatorModel.getExpression();
-        String[] splittedValues = values.split(",");
-        return null;
+        double[] values = calculatorModel.getArray();
+        double minimum = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] < minimum) {
+                minimum = values[i];
+            }
+        }
+        return "\n>> The minimum value in the array = " + minimum;
     }
 
     @Override
     public String MaxValue(CalculatorModel calculatorModel) {
-        return null;
+        double[] values = calculatorModel.getArray();
+        double maximum = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] > maximum) {
+                maximum = values[i];
+            }
+        }
+        return "\n>> The maximum value in the array = " + maximum;
     }
 
     @Override
     public String Sin(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.sin(value);
+        return "\n>> Sin(" + value + ") = " + answer;
     }
 
     @Override
     public String Cosine(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.cos(value);
+        return "\n>> Cos(" + value + ") = " + answer;
     }
 
     @Override
     public String Asin(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.asin(value);
+        return "\n>> Asin(" + value + ") = " + answer;
     }
 
     @Override
     public String Acos(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.acos(value);
+        return "\n>> Acos(" + value + ") = " + answer;
     }
 
     @Override
     public String Atan(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.atan(value);
+        return "\n>> Atan(" + value + ") = " + answer;
     }
 
     @Override
     public String Exponential(CalculatorModel calculatorModel) {
-        return null;
+        double value = calculatorModel.getOperand1();
+        double answer = Math.exp(value);
+        return "\n>> The exponential of " + value + " = " + answer;
     }
 
     @Override
     public String Palindrome(CalculatorModel calculatorModel) {
-        return null;
+        String value = calculatorModel.getExpression();
+        int startPoint = 0;
+        int endPoint = value.length() - 1;
+
+        while (startPoint <= endPoint){
+            if(value.charAt(startPoint) != value.charAt(endPoint)){
+                return "\n>> " + "The expression " + value + " is not a palindrome";
+            }
+
+            startPoint++;
+            endPoint--;
+        }
+        return "\n>> " + "The expression " + value + " is a palindrome";
     }
 
     @Override
     public String ArmstrongNumber(CalculatorModel calculatorModel) {
-        return null;
+        int valueLength = String.valueOf(calculatorModel.getIntegers()).length();
+        int integer = calculatorModel.getIntegers();
+        int result = 0;
+        while(integer > 0){
+           int number = integer % 10;
+           result += Math.pow(number, valueLength);
+           integer /= 10;
+        }
+
+       if(result != integer){
+           return "\n>> " + integer + " is not an Armstrong Number";
+       }
+        return "\n>> " + integer + " is not an Armstrong Number";
     }
 
     @Override
     public String PrimeNumber(CalculatorModel calculatorModel) {
-        return null;
+        int value = calculatorModel.getIntegers();
+        int halfValue = value / 2;
+        int i = 2;
+        while (i < halfValue){
+            if(value % i == 0){
+                return "\n>> " + calculatorModel.getIntegers() + " is not a prime number";
+            }
+
+            i++;
+        }
+
+        return "\n>> " + calculatorModel.getIntegers() + " is a prime number";
     }
 
     @Override
     public String Average(CalculatorModel calculatorModel) {
-        return null;
+
+        double[] values = calculatorModel.getArray();
+        double sum = 0;
+        for (int i = 1; i < values.length; i++) {
+            sum += values[i];
+        }
+        double average = sum / values.length;
+        return "\n>> The Average value of the numbers is = " + average;
     }
 
     @Override
     public String GCD(CalculatorModel calculatorModel) {
-        return null;
+        double a = calculatorModel.getOperand1();
+        double b = calculatorModel.getOperand2();
+        int max = (int) Math.max(a, b);
+
+        while(max % a != 0 || max % b != 0){
+            max += 1;
+        }
+
+        int product = (int) (a * b);
+        int GCD = product/max;
+        return ">> The GCD of " + a + " and " + b + " = " + GCD;
     }
 
     @Override
     public String LCM(CalculatorModel calculatorModel) {
-        return null;
+        double a = calculatorModel.getOperand1();
+        double b = calculatorModel.getOperand2();
+        int max = (int) Math.max(a, b);
+
+        while(max % a != 0 || max % b != 0){
+            max += 1;
+        }
+        return ">> The LCM of " + a + " and " + b + " = " + max;
     }
 }
