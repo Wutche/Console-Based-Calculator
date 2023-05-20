@@ -249,9 +249,23 @@ public class CalculatorView {
                     System.out.println("|                        MINIMUM VALUE                           |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the numbers separated by a comma(,), whose minimum value is to be determined");
+                    System.out.println(">> Please enter the number of entries expected");
                     System.out.print(">> ");
-                    calcModel.setExpression(input.next());
+                    int minEntries = input.nextInt();
+                    double[] minArr = new double[minEntries];
+                    for(int i = 0; i < minEntries; i++){
+                        if(i == 0){
+                            System.out.println(">> Please enter the first number");
+                            System.out.print(">> ");
+                            minArr[i] = input.nextDouble();
+                            continue;
+                        }
+
+                        System.out.println(">> Please enter the next number");
+                        System.out.print(">> ");
+                        minArr[i] = input.nextDouble();
+                    }
+                    calcModel.setArray(minArr);
                     System.out.println(calcController.MinValue(calcModel));
                     break;
 
@@ -261,9 +275,23 @@ public class CalculatorView {
                     System.out.println("|                        MAXIMUM VALUE                           |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the numbers separated by a comma(,), whose maximum value is to be determined");
+                    System.out.println(">> Please enter the number of entries expected");
                     System.out.print(">> ");
-                    calcModel.setExpression(input.next());
+                    int maxEntries = input.nextInt();
+                    double[] maxArr = new double[maxEntries];
+                    for(int i = 0; i < maxEntries; i++){
+                        if(i == 0){
+                            System.out.println(">> Please enter the first number");
+                            System.out.print(">> ");
+                            maxArr[i] = input.nextDouble();
+                            continue;
+                        }
+
+                        System.out.println(">> Please enter the next number");
+                        System.out.print(">> ");
+                        maxArr[i] = input.nextDouble();
+                    }
+                    calcModel.setArray(maxArr);
                     System.out.println(calcController.MaxValue(calcModel));
                     break;
 
