@@ -6,91 +6,42 @@ import java.util.Scanner;
 public class  CalculatorController implements CalculatorInterface{
     @Override
     public String Addition(CalculatorModel calculatorModel) {
-        int count;
-//        System.out.println("Enter count of numbers : ");
-        Scanner sc = new  Scanner(System.in);
-        count = sc.nextInt();
-        int number, sum = 0;
-        for(int i=0;i < count;i++){
-            number = sc.nextInt();
-            sum = sum + number;
+        double[] values = calculatorModel.getArray();
+        double sum = 0;
+        for (int i = 0; i < values.length; i++) {
+            sum += values[i];
         }
-         return "sum of all these numbers :" ;
+        return "\n>> The sum of the numbers is = " + sum;
     }
 
     @Override
     public String Subtraction(CalculatorModel calculatorModel) {
-//        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.print("Enter the number of values you want to subtract: ");
-            int count = scanner.nextInt();
-
-            int result = 0;
-
-            for (int i = 0; i < count; i++) {
-                System.out.print("Enter number " + (i + 1) + ": ");
-                int number = scanner.nextInt();
-
-                if (i == 0) {
-                    result = number; // Set the initial value
-                } else {
-                    result -= number; // Subtract the subsequent numbers
-                }
-            }
-
-            System.out.println("Result: " + result);
-
-            scanner.close();
-//        }
-        return null;
+        double[] values = calculatorModel.getArray();
+        double result = values[0];
+        for (int i = 1; i < values.length; i++) {
+            result -= values[i];
+        }
+        return "\n>> The solution to the subtraction of the numbers is = " + result;
     }
 
     @Override
     public String Multiplication(CalculatorModel calculatorModel) {
-//        System.out.print("Enter the number of values you want to multiply: ");
-//        int count = scanner.nextInt();
-//
-//        int product = 1;
-//        for (int i = 0; i < count; i++) {
-//            System.out.print("Enter value " + (i + 1) + ": ");
-//            int number = scanner.nextInt();
-//            product *= number;
-//        }
-//
-//        System.out.println("The product is: " + product);
-//    }
-        return null;
+         double[] values = calculatorModel.getArray();
+        double result = values[0];
+        for (int i = 1; i < values.length; i++) {
+            result *= values[i];
+        }
+        return "\n>> The solution to the multiplication of the numbers is = " + result;
     }
 
     @Override
     public String Division(CalculatorModel calculatorModel) {
-//        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.print("Enter the number of values to divide: ");
-            int count = scanner.nextInt();
-
-            double[] numbers = new double[count];
-
-            System.out.println("Enter the values:");
-
-            for (int i = 0; i < count; i++) {
-                System.out.print("Value " + (i + 1) + ": ");
-                numbers[i] = scanner.nextDouble();
-            }
-
-            double result = numbers[0]; // Start with the first number
-
-            for (int i = 1; i < count; i++) {
-                result /= numbers[i]; // Divide the result by each subsequent number
-            }
-
-            System.out.println("Result: " + result);
-
-            scanner.close();
-//        }
-        return null;
+         double[] values = calculatorModel.getArray();
+        double result = values[0];
+        for (int i = 1; i < values.length; i++) {
+            result /= values[i];
+        }
+        return "\n>> The solution to the division of the numbers is = " + result;
     }
 
 //    Algorithm to find the power of a number
@@ -160,7 +111,7 @@ public class  CalculatorController implements CalculatorInterface{
                 minimum = values[i];
             }
         }
-        return "\n>> The minimum value in the array = " + minimum;
+        return "\n>> The minimum value of the numbers is = " + minimum;
     }
 
 //    Algorithm to find the maximum number in an array of numbers
@@ -173,14 +124,15 @@ public class  CalculatorController implements CalculatorInterface{
                 maximum = values[i];
             }
         }
-        return "\n>> The maximum value in the array = " + maximum;
+        return "\n>> The maximum value of the numbers is = " + maximum;
     }
 
 //    Algorithm to find the sine of an angle
     @Override
     public String Sin(CalculatorModel calculatorModel) {
         double value = calculatorModel.getOperand1();
-        double answer = Math.sin(value);
+        double angle = Math.toRadians(value);
+        double answer = Math.sin(angle);
         return "\n>> Sin(" + value + ") = " + answer;
     }
 
@@ -188,7 +140,8 @@ public class  CalculatorController implements CalculatorInterface{
     @Override
     public String Cosine(CalculatorModel calculatorModel) {
         double value = calculatorModel.getOperand1();
-        double answer = Math.cos(value);
+        double angle = Math.toRadians(value);
+        double answer = Math.cos(angle);
         return "\n>> Cos(" + value + ") = " + answer;
     }
 
@@ -196,7 +149,8 @@ public class  CalculatorController implements CalculatorInterface{
     @Override
     public String Asin(CalculatorModel calculatorModel) {
         double value = calculatorModel.getOperand1();
-        double answer = Math.asin(value);
+        double angle = Math.toRadians(value);
+        double answer = Math.asin(angle);
         return "\n>> Asin(" + value + ") = " + answer;
     }
 
@@ -204,7 +158,8 @@ public class  CalculatorController implements CalculatorInterface{
     @Override
     public String Acos(CalculatorModel calculatorModel) {
         double value = calculatorModel.getOperand1();
-        double answer = Math.acos(value);
+        double angle = Math.toRadians(value);
+        double answer = Math.acos(angle);
         return "\n>> Acos(" + value + ") = " + answer;
     }
 
@@ -212,7 +167,8 @@ public class  CalculatorController implements CalculatorInterface{
     @Override
     public String Atan(CalculatorModel calculatorModel) {
         double value = calculatorModel.getOperand1();
-        double answer = Math.atan(value);
+        double angle = Math.toRadians(value);
+        double answer = Math.atan(angle);
         return "\n>> Atan(" + value + ") = " + answer;
     }
 

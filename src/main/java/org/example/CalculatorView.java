@@ -49,7 +49,6 @@ public class CalculatorView {
             System.out.println(">>> Enter an option below to continue.");
             System.out.print(">> ");
             int option = input.nextInt();
-//            This is temporary(to avoid infinite loop)
 
             switch(option){
                 case 1:
@@ -58,19 +57,19 @@ public class CalculatorView {
                     System.out.println("|                           ADDITION                             |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number of entries expected");
+                    System.out.println(">> Please enter the number of operands expected");
                     System.out.print(">> ");
                     int additionEntries = input.nextInt();
                     double[] additionArr = new double[additionEntries];
                     for(int i = 0; i < additionEntries; i++){
                         if(i == 0){
-                            System.out.println(">> Please enter the first number");
+                            System.out.println(">> Please enter the first operand");
                             System.out.print(">> ");
                             additionArr[i] = input.nextDouble();
                             continue;
                         }
 
-                        System.out.println(">> Please enter the next number");
+                        System.out.println(">> Please enter the next operand");
                         System.out.print(">> ");
                         additionArr[i] = input.nextDouble();
                     }
@@ -84,19 +83,19 @@ public class CalculatorView {
                     System.out.println("|                           SUBTRACTION                          |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number of entries expected");
+                    System.out.println(">> Please enter the number of operands expected");
                     System.out.print(">> ");
                     int subtractionEntries = input.nextInt();
                     double[] subtractionArr = new double[subtractionEntries];
                     for(int i = 0; i < subtractionEntries; i++){
                         if(i == 0){
-                            System.out.println(">> Please enter the first number");
+                            System.out.println(">> Please enter the first operand");
                             System.out.print(">> ");
                             subtractionArr[i] = input.nextDouble();
                             continue;
                         }
 
-                        System.out.println(">> Please enter the next number");
+                        System.out.println(">> Please enter the next operand");
                         System.out.print(">> ");
                         subtractionArr[i] = input.nextDouble();
                     }
@@ -110,19 +109,19 @@ public class CalculatorView {
                     System.out.println("|                         MULTIPLICATION                         |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number of entries expected");
+                    System.out.println(">> Please enter the number of operands expected");
                     System.out.print(">> ");
                     int multiplicationEntries = input.nextInt();
                     double[] multiplicationArr = new double[multiplicationEntries];
                     for(int i = 0; i < multiplicationEntries; i++){
                         if(i == 0){
-                            System.out.println(">> Please enter the first number");
+                            System.out.println(">> Please enter the first operand");
                             System.out.print(">> ");
                             multiplicationArr[i] = input.nextDouble();
                             continue;
                         }
 
-                        System.out.println(">> Please enter the next number");
+                        System.out.println(">> Please enter the next operand");
                         System.out.print(">> ");
                         multiplicationArr[i] = input.nextDouble();
                     }
@@ -136,19 +135,19 @@ public class CalculatorView {
                     System.out.println("|                           DIVISION                             |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number of entries expected");
+                    System.out.println(">> Please enter the number of operands expected");
                     System.out.print(">> ");
                     int divisionEntries = input.nextInt();
                     double[] divisionArr = new double[divisionEntries];
                     for(int i = 0; i < divisionEntries; i++){
                         if(i == 0){
-                            System.out.println(">> Please enter the first number");
+                            System.out.println(">> Please enter the first operand");
                             System.out.print(">> ");
                             divisionArr[i] = input.nextDouble();
                             continue;
                         }
 
-                        System.out.println(">> Please enter the next number");
+                        System.out.println(">> Please enter the next operand");
                         System.out.print(">> ");
                         divisionArr[i] = input.nextDouble();
                     }
@@ -162,7 +161,7 @@ public class CalculatorView {
                     System.out.println("|                            POWER                               |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the value you want to raise to power");
+                    System.out.println(">> Please enter the base number");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(">> Please enter the power");
@@ -177,7 +176,7 @@ public class CalculatorView {
                     System.out.println("|                            SQUARE                              |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number you want to square");
+                    System.out.println(">> Please enter the base number");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Square(calcModel));
@@ -189,7 +188,7 @@ public class CalculatorView {
                     System.out.println("|                             CUBE                               |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number you want to cube");
+                    System.out.println(">> Please enter the base number");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Cube(calcModel));
@@ -201,7 +200,7 @@ public class CalculatorView {
                     System.out.println("|                          SQUARE ROOT                           |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number you want to get the square root of");
+                    System.out.println(">> Please enter the base number");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.SquareRoot(calcModel));
@@ -301,7 +300,7 @@ public class CalculatorView {
                     System.out.println("|                             SINE                               |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number, whose sine angle is to be determined");
+                    System.out.println(">> Please enter the angle");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Sin(calcModel));
@@ -313,7 +312,7 @@ public class CalculatorView {
                     System.out.println("|                            COSINE                              |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number, whose Cosine angle is to be determined");
+                    System.out.println(">> Please enter the angle");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Cosine(calcModel));
@@ -326,7 +325,7 @@ public class CalculatorView {
                     System.out.println("|                            ARC-SINE                             |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number, whose ArcSine angle is to be determined");
+                    System.out.println(">> Please enter the angle");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Asin(calcModel));
@@ -339,7 +338,7 @@ public class CalculatorView {
                     System.out.println("|                           ARC-COSINE                            |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number, whose ArcCosine angle is to be determined");
+                    System.out.println(">> Please enter the angle");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Acos(calcModel));
@@ -351,7 +350,7 @@ public class CalculatorView {
                     System.out.println("|                          ARC-TANGENT                            |");
                     System.out.println("|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++|");
                     System.out.println();
-                    System.out.println(">> Please enter the number, whose ArcTangent angle is to be determined");
+                    System.out.println(">> Please enter the angle");
                     System.out.print(">> ");
                     calcModel.setOperand1(input.nextDouble());
                     System.out.println(calcController.Atan(calcModel));
@@ -462,22 +461,29 @@ public class CalculatorView {
                     break;
 
                 case 26:
+                    System.out.println();
+                    System.out.println(">> Thank you for using our calculator. Have a nice day!");
                     exitApplication = true;
+                    break;
 
                 default:
                     System.out.println();
                     System.out.println(">> Incorrect Option");
             }
 
-            System.out.println();
-            System.out.println(">> Do you want to perform another calculation? if yes, write yes, else enter any key");
-            System.out.print(">> ");
-            answer = input.next();
-            System.out.println();
-            if(!answer.equalsIgnoreCase("yes")){
-                System.out.println(">> Thank you for using our calculator. Have a nice day!");
-                exitApplication = true;
+            if(!exitApplication){
+                System.out.println();
+                System.out.println(">> Do you want to perform another calculation? if yes, write yes, else enter any key");
+                System.out.print(">> ");
+                answer = input.next();
+                System.out.println();
+                if(!answer.equalsIgnoreCase("yes")){
+                    System.out.println(">> Thank you for using our calculator. Have a nice day!");
+                    exitApplication = true;
+                }
             }
+
+
 
         }
 
